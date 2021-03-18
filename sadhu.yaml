@@ -1,0 +1,20 @@
+apiVersion: management.cattle.io/v3
+builtin: true
+context: cluster
+description: "Limited permissions for cluster logging"
+displayName: Sample nodes view
+external: false
+hidden: false
+kind: RoleTemplate
+metadata:
+  name: sample-nodes-view
+  namespace: ingress-nginx
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - namespaces
+  - services/proxy
+  verbs:
+  - get
+  - list
